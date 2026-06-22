@@ -1,0 +1,36 @@
+services:
+
+  db:
+    image: mariadb:10.4
+    container_name: sqli_lab3_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: SQLI_Exercise
+      MYSQL_USER: sqli
+      MYSQL_PASSWORD: sqli
+    volumes:
+      - ../DB/lab_3.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - db_lab3_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM php:8.2-apache
+        RUN docker-php-ext-install mysqli
+    container_name: sqli_lab3_web
+    ports:
+      - "8083:80"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_lab3_data:
