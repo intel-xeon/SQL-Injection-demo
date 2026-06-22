@@ -9,7 +9,7 @@ services:
       MYSQL_USER: sqli
       MYSQL_PASSWORD: sqli
     volumes:
-      - ../DB/lab_1.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - /tmp/sql_injection_exercise-main/DB/lab_1.sql:/docker-entrypoint-initdb.d/init.sql:ro
       - db_lab1_data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
