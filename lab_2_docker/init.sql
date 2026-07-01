@@ -14,4 +14,5 @@ CREATE TABLE IF NOT EXISTS utenti_ongualki (
     utente   VARCHAR(50),
     password VARCHAR(50)
 );
-INSERT INTO utenti_ongualki (utente, password) VALUES ('admin', 'HiddenPass789!');
+-- password in chiaro: "letmein"  (SHA384)
+INSERT INTO utenti_ongualki (utente, password) VALUES ('admin', '7f4cb2ea018f770ac03738d8abfdae023e6e368a0a3440d126a557c4d0c2a00efafccf4b691cb76ce6bdf8887db3ba84');

@@ -12,7 +12,7 @@ try {
     }
 
     $u = $_POST['username'];
-    $p = $_POST['password'];
+    $p = hash('sha384', $_POST['password']);
 
     // Tabella reale nel DB: utenti_ongualki (colonne: utente, password)
     $preparedStatement = $conn->prepare('SELECT * FROM utenti_ongualki WHERE utente=? AND password=?');

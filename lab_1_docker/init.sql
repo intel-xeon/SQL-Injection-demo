@@ -14,4 +14,5 @@ CREATE TABLE IF NOT EXISTS utenti (
     user     VARCHAR(50),
     password VARCHAR(50)
 );
-INSERT INTO utenti (user, password) VALUES ('admin', 'LabPass456!');
+-- password in chiaro: "123456"  (SHA256)
+INSERT INTO utenti (user, password) VALUES ('admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');

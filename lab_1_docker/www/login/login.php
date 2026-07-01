@@ -12,7 +12,7 @@ try {
     }
 
     $u = $_POST['username'];
-    $p = $_POST['password'];
+    $p = hash('sha256', $_POST['password']);
 
     $preparedStatement = $conn->prepare('SELECT * FROM utenti WHERE user=? AND password=?');
     $preparedStatement->bind_param('ss', $u, $p);

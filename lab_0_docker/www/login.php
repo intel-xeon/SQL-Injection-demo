@@ -12,7 +12,7 @@ try {
     }
 
     $u = $_POST['username'];
-    $p = $_POST['password'];
+    $p = sha1($_POST['password']);
 
     $sql    = "SELECT * FROM utenti WHERE utente='$u' AND password='$p'";
     $result = $conn->query($sql);
