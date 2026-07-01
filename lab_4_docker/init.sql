@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS acc_t7vn2kqx (
     usr_hP5mW3r VARCHAR(50),
     pwd_jL8xB6s VARCHAR(128)
 );
--- password in chiaro: "monkey"  (SHA224)
-INSERT INTO acc_t7vn2kqx (usr_hP5mW3r, pwd_jL8xB6s) VALUES ('admin', '87b9b78c17428a74195ae419b3d347c382393fade9f3c9369fcb2117');
+-- password in chiaro: "CRACKED_MANUALLY_GOOD_WORK!!!"  (SHA224)
+INSERT INTO acc_t7vn2kqx (usr_hP5mW3r, pwd_jL8xB6s) VALUES ('admin', '9f68c44a89372a899a58eea576dfdb06b92df1912664148730b018dc');
