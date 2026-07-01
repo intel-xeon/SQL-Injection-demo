@@ -21,7 +21,7 @@ Apri il browser su **http://localhost**. `CTRL+C` ferma e rimuove il container.
 ### Script wrapper
 
 ```bash
-./run_lab.sh <N>   # N = 0, 1, 2 oppure 3
+./run_lab.sh <N>   # N = 0, 1, 2, 3 oppure 4
 ```
 
 ---
@@ -70,4 +70,16 @@ Come il Lab 2, ma anche i nomi delle colonne sono sconosciuti.
 
 ```bash
 cd lab_3_docker && docker build -t lab3 . && docker run --rm -p 80:80 lab3
+```
+
+---
+
+## Lab 4 — Data Exfiltration (blind column count)
+
+Come il Lab 3, ma senza alcun suggerimento visivo sulla struttura della query. La query backend seleziona un numero di colonne diverso da quello apparente.
+
+**Obiettivo:** determinare il numero esatto di colonne della query, scoprire tabella e colonne nascoste, recuperare le credenziali e autenticarsi.
+
+```bash
+cd lab_4_docker && docker build -t lab4 . && docker run --rm -p 80:80 lab4
 ```
